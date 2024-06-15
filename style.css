@@ -11,23 +11,26 @@ body {
 }
 
 #board {
-  width: 400px;
-  height: 400px;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+  width: 90vw;
+  max-width: 810px;
+  height: 90vw;
+  max-height: 810px;
   border: 5px solid darkgray;
   background-color: lightgray;
-  display: flex;
-  flex-wrap: wrap;
+  gap: 1px;
 }
 
 #board div {
-  width: 48px;
-  height: 48px;
-  border: 1px solid whitesmoke;
-
-  font-size: 30px;
+  width: 100%;
+  height: 100%;
+  font-size: 1.875vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid whitesmoke;
 }
 
 .tile-clicked {
@@ -37,39 +40,51 @@ body {
 .x1 {
   color: blue;
 }
-
 .x2 {
   color: green;
 }
-
 .x3 {
   color: red;
 }
-
 .x4 {
   color: purple;
 }
-
 .x5 {
   color: orange;
 }
-
 .x6 {
   color: pink;
 }
-
 .x7 {
   color: brown;
 }
-
 .x8 {
   color: black;
 }
 
 #flag-button {
-  width: 100px;
-  height: 50px;
-  font-size: 30px;
+  width: 90vw;
+  max-width: 100px;
+  height: 10vw;
+  max-height: 50px;
+  font-size: calc(30px * (90vw / 810));
   background-color: lightgrey;
   border: none;
+}
+
+@media (min-width: 1024px) {
+  #board {
+    width: 810px;
+    height: 810px;
+  }
+
+  #board div {
+    font-size: 30px;
+  }
+
+  #flag-button {
+    width: 100px;
+    height: 50px;
+    font-size: 30px;
+  }
 }
